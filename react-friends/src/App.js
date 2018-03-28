@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import {people} from './people.js';
-import PeopleList from './PeopleList.js';
+import {PeopleList} from './PeopleList.js';
+
 
 class App extends Component {
   constructor() {
     super(); 
       this.state = {
-        people: []
+        People: []
       };
   }
 
   componentDidMount(){
-    const {peopleData} = people;
-    this.setState({people: peopleData})
+     this.setState({People: people})
 
   }
 
@@ -22,16 +22,12 @@ class App extends Component {
 // Pass your People data down to PeopleList and render out the People List <PeopleList people={this.state.People} />.
 // For each person in PeopleList render out the first_name and last_name and email.
   render() {
-    return <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+    return(
+    <div className="App">
+        <h1> Hello React App</h1>
         <PeopleList people={this.state.People} />
-      </div>;
+      </div>
+    );
   }
 }
 
